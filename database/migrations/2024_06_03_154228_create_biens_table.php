@@ -19,7 +19,8 @@ return new class extends Migration
             $table->text('description');
             $table->string('adresse');
             $table->boolean('statut');
-            $table->timestamps('date_ajout');
+            $table->date('date_ajout');
+            $table->timestamps();
         });
     }
 
