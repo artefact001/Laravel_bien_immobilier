@@ -12,7 +12,7 @@
             <div class="col s12">
                 <h1>LISTE DES BIENS</h1>
                 <hr>
-                <a href="/ajouter" class="btn btn-primary">Ajouter un bien</a>
+                <a href="/bien/ajouter" class="btn btn-primary">Ajouter un bien</a>
                 <hr>
                 @if (session('status'))
                 <div class="alert alert-success">

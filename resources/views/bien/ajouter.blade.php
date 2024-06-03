@@ -63,7 +63,7 @@
 
                     <br> <br>
 
-                    <a href="/article" class="btn btn-outline-primary btn sm">Revenir à la liste des biens</a>
+                    <a href="/bien" class="btn btn-outline-primary btn sm">Revenir à la liste des biens</a>
                   </form>
                 
             </div>

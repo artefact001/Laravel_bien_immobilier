@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Bien;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class BienController extends Controller
 {
@@ -40,5 +41,11 @@ class BienController extends Controller
     
         return redirect('/bien')->with('status', "Le bien a bien été ajouté avec succés.");
        }
+
+       public function detail_bien($id){
+        $bien = DB::table('biens')->where('id', $id)->get();
+        $bien = Bien::findOrFail($id);
+        return view('bien/detail',['bien'=>$bien]);
+    }
 
 }
