@@ -7,8 +7,9 @@ use Illuminate\Http\Request;
 
 class BienController extends Controller
 {
-    public function index(){
-        return view('bien.index');
+    public function ListeBien(){
+        $biens = Bien::all();
+        return view('bien/index', compact('biens'));
     }
 
     public function AjouterBien(){
