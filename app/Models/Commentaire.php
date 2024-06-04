@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Bien extends Model
+class Commentaire extends Model
 {
     use HasFactory;
 
-    public function commentaires()
+    public function article()
     {
-        return $this->hasMany(Commentaire::class);
-    }
+        return $this->belongsTo(Bien::class);
+}
 }
