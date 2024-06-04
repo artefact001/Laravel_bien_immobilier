@@ -12,4 +12,10 @@ Route::post('/ajouter/bien-traitement', [BienController::class, 'AjouterBienTrai
 Route::get('/detail-bien/{id}', [BienController::class, 'detail_bien']);
 
 
+// route pour la modification de biens
+Route::post('/modifier/bien-traitement/', [BienController::class, 'ModifierBienTraitement']);
+Route::get('/modifier-bien/{id}', [BienController::class, 'ModifierBien']);
+
+// Route::post('traitement' ,[BienController::class , 'ModifierTraitement']);
+
 Route::post('/ajouter/commentaire-traitement', [CommentaireController::class, 'AjouterCommentaireTraitement']);

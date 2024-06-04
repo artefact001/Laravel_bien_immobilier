@@ -27,6 +27,7 @@
 
           <form action="{{url('/modifier/bien-traitement/')}}" method="post">
             @csrf
+            <input type="text" name="id" style="display: none" value="{{ old('id', $biens->id) }}" >
              <div class="form-group">
               <label for="nom">Nom</label>
               <input type="text" class="form-control" id="nom" name="nom" value="{{ old('nom', $biens->nom) }}">
