@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Bien;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 class BienController extends Controller
@@ -113,8 +114,15 @@ public function SupprimerBien($id)
     // Delete the database record
     $bien->delete();
 
-    // Redirect back to the list page with a success message
-    return redirect('/bien')->with('status', 'Le bien a bien été supprimé avec succès.');
+        return redirect('/bien')->with('status', "Le bien a bien été supprimé avec succés.");
+    }
+
+    public function DetailBien($id){
+        /*dd($request->all());*/
+        $bien = DB::table('biens')->where('id', $id)->get();
+        $bien = Bien::findOrFail($id);
+        return view('bien/detail', compact('bien'));
+    }
 }
 
-}
+
