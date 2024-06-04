@@ -18,7 +18,7 @@ class BienController extends Controller
         return view ('bien/ajouter');
 
      }
-   
+
         public function AjouterBienTraitement(Request $request){
 
         $request->validate([
@@ -74,19 +74,47 @@ class BienController extends Controller
         $bien->update();
 
         return redirect('/bien')->with('status', "Le bien a bien été modifié avec succés.");
-    } 
+    }
 
-    public function SupprimerBien($id)
-    {
-        $bien = Bien::findOrFail($id);
+    // public function SupprimerBien($id)
+    // {
+    //     $bien = Bien::findOrFail($id);
 
         // Suppression de l'image si elle existe
-        if ($bien->image) {
-            Storage::delete($bien->image);
-        }
+        // if ($bien->image) {
+        //     Storage::delete($bien->image);
+        // }
 
-        $bien->delete();
+    //     $bien->delete();
 
-        return redirect('/bien')->with('status', "Le bien a bien été supprimé avec succés.");
-    }
+    //     return redirect('/bien')->with('status', "Le bien a bien été supprimé avec succés.");
+    // }
+
+
+
+//  // Supprimer un bien
+//  public function SupprimerBien($id)
+//  {
+//      $bien = Bien::findOrFail($id);
+
+//      if ($bien->image && Storage::disk('public')->exists($bien->image)) {
+//          Storage::disk('public')->delete($bien->image);
+//      }
+
+//      $bien->delete();
+
+//      return redirect('/bien')->with('status', 'Le bien a bien été supprimé avec succès.');
+//  }
+
+
+public function SupprimerBien($id)
+{
+    $bien = Bien::findOrFail($id);
+    // Delete the database record
+    $bien->delete();
+
+    // Redirect back to the list page with a success message
+    return redirect('/bien')->with('status', 'Le bien a bien été supprimé avec succès.');
+}
+
 }

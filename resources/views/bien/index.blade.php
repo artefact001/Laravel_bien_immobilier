@@ -16,7 +16,7 @@
                 <hr>
                 @if (session('status'))
                 <div class="alert alert-success">
-                    {{session('status')}} 
+                    {{session('status')}}
                 </div>
                 @endif
                 @php
@@ -35,9 +35,9 @@
                         <p>
                             <div>
                                 @if($bien->statut)
-                                <span class="badge rounded-pill text-bg-warning">Libre</span>                                  
+                                <span class="badge rounded-pill text-bg-warning">Libre</span>
                                 @else
-                                <span class="badge rounded-pill text-bg-warning">Occupé</span>                                
+                                <span class="badge rounded-pill text-bg-warning">Occupé</span>
                                 @endif
                             </div>
                         </p>
@@ -58,9 +58,9 @@
     </div>
 </div>
 </div>
-                
-                       
-                    
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
 </html>
